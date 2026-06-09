@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
