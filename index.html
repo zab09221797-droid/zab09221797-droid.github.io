@@ -3,165 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>China Travel Guide 2026 - Everything Foreigners Need to Know</title>
-<meta name="description" content="The complete travel guide for visiting China in 2026. SIM cards, WeChat Pay, visas, cities, high speed trains and practical tips for foreign visitors.">
-<meta name="keywords" content="China travel guide, visit China, China tourism 2026, Beijing travel, Shanghai travel, China visa, WeChat Pay foreigners">
+<title>China Travel Guide 2026 - Practical Tips for Foreign Visitors</title>
+<meta name="description" content="The complete practical travel guide for visiting China in 2026. SIM cards, WeChat Pay, visas, cities, high speed trains and honest tips for foreign visitors.">
+<meta name="keywords" content="China travel guide 2026, visit China, China tourism, Beijing travel guide, Shanghai travel guide, China visa, WeChat Pay foreigners, China SIM card">
 <link rel="stylesheet" href="style.css">
 <style>
-/* INDEX SPECIFIC */
-.hero{position:relative;height:90vh;overflow:hidden}
+/* HOME ONLY */
+.home-nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:transparent;z-index:100;transition:background 0.3s}
+.home-nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #f0ece6}
+.home-nav .nav-logo{color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
+.home-nav.scrolled .nav-logo{color:#1a1a1a}
+.home-nav .nav-links a{color:rgba(255,255,255,0.85);margin-left:28px;font-size:13px;font-weight:500;letter-spacing:0.05em}
+.home-nav.scrolled .nav-links a{color:#666}
+.home-nav .nav-links a:hover{color:#fff}
+.home-nav.scrolled .nav-links a:hover{color:#c0392b}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden}
 .hero img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.6) 100%)}
-.hero-text{position:absolute;bottom:80px;left:60px;color:#fff;max-width:620px}
-.hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border:1px solid rgba(255,255,255,0.5);border-radius:20px;margin-bottom:20px}
-.hero-text h1{font-size:50px;font-weight:700;line-height:1.1;margin-bottom:16px;color:#fff}
-.hero-text p{font-size:18px;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:28px}
-.hero-btn{display:inline-block;background:#fff;color:#222;font-size:14px;font-weight:700;padding:14px 28px;border-radius:3px}
-.hero-btn:hover{background:#f0f0f0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.65) 100%)}
+.hero-content{position:absolute;bottom:100px;left:80px;max-width:580px;color:#fff}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.14em;color:rgba(255,255,255,0.7);margin-bottom:18px}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:58px;font-weight:700;line-height:1.08;margin-bottom:20px;color:#fff}
+.hero-content p{font-size:17px;color:rgba(255,255,255,0.8);line-height:1.65;margin-bottom:32px;max-width:460px}
+.hero-cta{display:inline-block;background:#c0392b;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.06em;padding:15px 32px;border-radius:2px;transition:background 0.2s}
+.hero-cta:hover{background:#a93226}
 
-.sec{padding:60px 60px 40px}
-.sec-label{font-size:11px;font-weight:700;letter-spacing:0.12em;color:#999;margin-bottom:8px}
-.sec-title{font-size:28px;font-weight:700;margin-bottom:32px;color:#111}
-.sec-link{font-size:14px;color:#c0392b;float:right;margin-top:-48px}
+/* SECTIONS */
+.sec{padding:80px 80px 60px}
+.sec-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.12em;color:#c0392b;margin-bottom:10px}
+.sec-heading{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1a1a1a;margin-bottom:48px;line-height:1.2}
 
-/* ESSENTIAL GRID */
-.e-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#eee;border:1px solid #eee;margin-bottom:60px}
-.e-card{background:#fff;padding:32px 28px;transition:background 0.15s}
-.e-card:hover{background:#fafafa}
-.e-card .num{font-size:11px;color:#bbb;margin-bottom:14px;font-weight:600;letter-spacing:0.08em}
-.e-card h3{font-size:17px;font-weight:700;margin-bottom:8px;color:#111}
-.e-card p{font-size:14px;color:#666;line-height:1.6;margin-bottom:20px}
-.e-card .arr{font-size:18px;color:#222}
+/* ESSENTIAL CARDS */
+.e-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #ede9e4}
+.e-card{padding:36px 32px;border-right:1px solid #ede9e4;border-bottom:1px solid #ede9e4;transition:background 0.2s;position:relative}
+.e-card:hover{background:#fdf8f4}
+.e-card:nth-child(3n){border-right:none}
+.e-num{font-size:11px;color:#ccc;font-weight:600;letter-spacing:0.1em;margin-bottom:16px}
+.e-card h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin-bottom:10px;color:#1a1a1a}
+.e-card p{font-size:14px;color:#777;line-height:1.65;margin-bottom:24px}
+.e-arr{font-size:13px;color:#c0392b;font-weight:600;letter-spacing:0.05em}
 
-/* TOP CITIES */
-.city-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:20px}
-.city-card{position:relative;height:280px;overflow:hidden;border-radius:3px}
-.city-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+/* AD */
+.ad-home{background:#f9f6f2;border:1.5px dashed #e0dbd4;text-align:center;padding:44px;margin:0 80px 80px;border-radius:4px;color:#ccc;font-size:12px;letter-spacing:0.1em}
+
+/* CITY SECTION */
+.city-hero-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:480px 320px;gap:12px;margin-bottom:16px}
+.city-card{position:relative;overflow:hidden;border-radius:2px}
+.city-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
 .city-card:hover img{transform:scale(1.04)}
-.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 55%)}
-.city-info{position:absolute;bottom:24px;left:24px;color:#fff}
-.city-info h3{font-size:22px;font-weight:700;margin-bottom:4px}
-.city-info p{font-size:13px;color:rgba(255,255,255,0.8)}
+.city-card:first-child{grid-row:1/3}
+.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)}
+.city-info{position:absolute;bottom:28px;left:28px;color:#fff}
+.city-info h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:5px}
+.city-info p{font-size:13px;color:rgba(255,255,255,0.75)}
+.city-info .read-more{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#fff;border-bottom:1px solid rgba(255,255,255,0.5);padding-bottom:2px}
 
 /* MORE CITIES */
-.more-cities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.more-city{border:1px solid #eee;border-radius:3px;padding:16px 20px;transition:border-color 0.15s}
-.more-city:hover{border-color:#ccc}
-.more-city h4{font-size:15px;font-weight:700;margin-bottom:4px;color:#111}
-.more-city p{font-size:12px;color:#888;margin:0}
+.more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.more-card{border:1px solid #ede9e4;padding:20px 22px;border-radius:2px;transition:all 0.2s}
+.more-card:hover{border-color:#c0392b;background:#fdf8f4}
+.more-card h4{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:5px;color:#1a1a1a}
+.more-card p{font-size:12px;color:#999;margin:0;line-height:1.5}
 
 /* TRANSPORT */
-.transport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px}
-.t-card{border:1px solid #eee;border-radius:3px;padding:24px;transition:border-color 0.15s}
-.t-card:hover{border-color:#ccc}
-.t-card h3{font-size:16px;font-weight:700;margin-bottom:8px;color:#111}
-.t-card p{font-size:13px;color:#666;line-height:1.6;margin-bottom:16px}
-.t-card a{font-size:13px;color:#c0392b}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.t-card{border:1px solid #ede9e4;border-radius:2px;padding:28px;transition:all 0.2s}
+.t-card:hover{border-color:#c0392b;transform:translateY(-2px)}
+.t-card .t-icon{font-size:28px;margin-bottom:14px}
+.t-card h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:10px;color:#1a1a1a}
+.t-card p{font-size:13px;color:#777;line-height:1.65;margin-bottom:18px}
+.t-card a{font-size:13px;color:#c0392b;font-weight:600}
 
 /* FOOTER */
-.site-footer{background:#111;color:#666;padding:40px 60px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
-.site-footer .f-logo{color:#fff;font-size:16px;font-weight:700}
-.site-footer .f-links a{color:#666;font-size:13px;margin-left:20px}
-.site-footer .f-links a:hover{color:#999}
+.site-footer{background:#1a1a1a;padding:48px 80px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.site-footer .f-logo{font-family:'Playfair Display',serif;color:#fff;font-size:18px;font-weight:700}
+.site-footer .f-right{font-size:13px;color:#555}
+.site-footer .f-right a{color:#555;margin-left:20px;transition:color 0.2s}
+.site-footer .f-right a:hover{color:#999}
 
 /* MOBILE */
-@media(max-width:768px){
-  .hero-text{left:24px;bottom:48px}
-  .hero-text h1{font-size:30px}
-  .hero-text p{font-size:15px;display:none}
-  .hero-btn{padding:12px 20px;font-size:13px}
-  .sec{padding:40px 16px 24px}
-  .e-grid{grid-template-columns:1fr}
-  .city-grid{grid-template-columns:1fr}
+@media(max-width:900px){
+  .sec{padding:60px 32px 40px}
+  .ad-home{margin:0 32px 60px}
+  .e-grid{grid-template-columns:1fr 1fr}
+  .e-card:nth-child(3n){border-right:1px solid #ede9e4}
+  .e-card:nth-child(2n){border-right:none}
+  .city-hero-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .city-card:first-child{grid-row:auto;height:320px}
   .city-card{height:220px}
-  .more-cities{grid-template-columns:repeat(2,1fr)}
-  .transport-grid{grid-template-columns:1fr}
-  .site-footer{flex-direction:column;gap:16px;text-align:center;padding:32px 16px}
-  .site-footer .f-links a{margin:0 8px}
+  .more-grid{grid-template-columns:repeat(2,1fr)}
+  .t-grid{grid-template-columns:1fr}
+  .site-footer{flex-direction:column;gap:20px;text-align:center;padding:36px 24px}
+}
+@media(max-width:600px){
+  .home-nav{padding:16px 20px}
+  .home-nav .nav-links{display:none}
+  .hero-content{left:24px;bottom:60px}
+  .hero-content h1{font-size:34px}
+  .hero-content p{display:none}
+  .sec{padding:48px 16px 32px}
+  .ad-home{margin:0 16px 48px}
+  .e-grid{grid-template-columns:1fr}
+  .e-card{border-right:none}
+  .more-grid{grid-template-columns:1fr 1fr}
+  .sec-heading{font-size:26px}
 }
 </style>
+<script>
+window.addEventListener('scroll',function(){
+  var nav=document.querySelector('.home-nav');
+  if(window.scrollY>60){nav.classList.add('scrolled')}
+  else{nav.classList.remove('scrolled')}
+});
+</script>
 </head>
 <body>
 
-<!-- HERO -->
-<nav style="position:absolute;top:0;left:0;right:0;background:transparent;border:none;padding:20px 40px;z-index:100">
-  <a href="/" class="nav-logo" style="color:#fff;font-size:17px;font-weight:700">China Travel Guide</a>
+<nav class="home-nav">
+  <div class="nav-logo">China Travel Guide</div>
   <div class="nav-links">
-    <a href="#essentials" style="color:rgba(255,255,255,0.85)">Essentials</a>
-    <a href="#cities" style="color:rgba(255,255,255,0.85)">Cities</a>
-    <a href="#transport" style="color:rgba(255,255,255,0.85)">Transport</a>
+    <a href="#essentials">Essentials</a>
+    <a href="#cities">Cities</a>
+    <a href="#transport">Transport</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <img src="img6.jpg" alt="China travel guide">
+  <img src="img6.jpg" alt="China travel">
   <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <div class="hero-tag">UPDATED JUNE 2026</div>
-    <h1>Your Complete Guide to Traveling China</h1>
-    <p>Practical, honest guides for first-time and returning visitors — SIM cards, payments, visas, cities and getting around.</p>
-    <a href="#essentials" class="hero-btn">Start Exploring →</a>
+  <div class="hero-content">
+    <div class="hero-eyebrow">CHINA TRAVEL GUIDE 2026</div>
+    <h1>Travel China Without the Guesswork</h1>
+    <p>Practical, honest guides for foreign visitors — SIM cards, payments, visas, cities and getting around.</p>
+    <a href="#essentials" class="hero-cta">EXPLORE GUIDES →</a>
   </div>
 </div>
 
-<!-- ESSENTIAL GUIDES -->
+<!-- ESSENTIALS -->
 <div class="sec" id="essentials">
-  <div class="sec-label">ESSENTIAL GUIDES</div>
-  <div class="sec-title">Before You Arrive</div>
+  <div class="sec-eyebrow">BEFORE YOU ARRIVE</div>
+  <div class="sec-heading">Essential Guides for Foreign Visitors</div>
   <div class="e-grid">
     <a href="sim-card-china.html" class="e-card">
-      <div class="num">01 — CONNECTIVITY</div>
+      <div class="e-num">01 — CONNECTIVITY</div>
       <h3>SIM Card in China</h3>
-      <p>Which carrier to pick, where to buy, and what documents you need as a foreign visitor.</p>
-      <div class="arr">→</div>
+      <p>Which carrier to pick, where to buy, and what to bring. Don't get turned away at the wrong shop.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
     <a href="wechat-pay-foreigners.html" class="e-card">
-      <div class="num">02 — PAYMENTS</div>
+      <div class="e-num">02 — PAYMENTS</div>
       <h3>WeChat Pay for Foreigners</h3>
-      <p>How to set up mobile payments with a foreign bank card before and after you land.</p>
-      <div class="arr">→</div>
+      <p>How to set up mobile payments with a foreign card — and what to do when it inevitably fails.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
     <a href="china-vpn.html" class="e-card">
-      <div class="num">03 — INTERNET</div>
+      <div class="e-num">03 — INTERNET</div>
       <h3>VPN in China</h3>
-      <p>How to access Google, Instagram and WhatsApp — and why you must set this up before you fly.</p>
-      <div class="arr">→</div>
+      <p>Google, Instagram and WhatsApp are blocked. Here's what actually works — and must be set up before you land.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
     <a href="china-visa.html" class="e-card">
-      <div class="num">04 — ENTRY</div>
+      <div class="e-num">04 — ENTRY</div>
       <h3>China Visa Guide</h3>
-      <p>Visa-free countries, tourist visa requirements, the 144-hour transit exemption and common mistakes.</p>
-      <div class="arr">→</div>
+      <p>Visa-free countries, tourist visa requirements, the 144-hour transit exemption and the mistakes people make.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
     <a href="high-speed-train.html" class="e-card">
-      <div class="num">05 — TRANSPORT</div>
+      <div class="e-num">05 — TRANSPORT</div>
       <h3>High Speed Trains</h3>
-      <p>How to book tickets, navigate stations, find your carriage and not get lost at the exit.</p>
-      <div class="arr">→</div>
+      <p>How to book, how to find your carriage, what to eat on board and how not to exit at the wrong end.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
     <a href="cash-atm-china.html" class="e-card">
-      <div class="num">06 — MONEY</div>
+      <div class="e-num">06 — MONEY</div>
       <h3>Cash & ATMs in China</h3>
-      <p>Where to withdraw money, which cards work, and how much cash you actually need.</p>
-      <div class="arr">→</div>
+      <p>Where to withdraw, which foreign cards actually work, and how much cash you realistically need.</p>
+      <div class="e-arr">READ GUIDE →</div>
     </a>
   </div>
 </div>
 
-<!-- AD SLOT -->
-<div style="margin:0 60px 60px;background:#f7f7f7;border:2px dashed #ddd;text-align:center;padding:36px;border-radius:4px;color:#bbb;font-size:13px">Advertisement</div>
+<!-- AD -->
+<div class="ad-home">ADVERTISEMENT</div>
 
-<!-- TOP CITIES -->
+<!-- CITIES -->
 <div class="sec" id="cities">
-  <div class="sec-label">DESTINATIONS</div>
-  <div class="sec-title">Top Cities to Visit</div>
-  <div class="city-grid">
+  <div class="sec-eyebrow">DESTINATIONS</div>
+  <div class="sec-heading">Where to Go in China</div>
+
+  <div class="city-hero-grid">
     <a href="beijing.html" class="city-card">
       <img src="img4.jpg" alt="Beijing travel guide">
       <div class="city-overlay"></div>
       <div class="city-info">
         <h3>Beijing</h3>
-        <p>Great Wall · Forbidden City · Temple of Heaven</p>
+        <p>Forbidden City · Great Wall · Temple of Heaven · Hutongs</p>
+        <span class="read-more">TRAVEL GUIDE →</span>
       </div>
     </a>
     <a href="shanghai.html" class="city-card">
@@ -170,14 +209,7 @@
       <div class="city-info">
         <h3>Shanghai</h3>
         <p>The Bund · French Concession · Food scene</p>
-      </div>
-    </a>
-    <a href="chengdu.html" class="city-card">
-      <img src="img9.jpg" alt="Chengdu travel guide">
-      <div class="city-overlay"></div>
-      <div class="city-info">
-        <h3>Chengdu</h3>
-        <p>Giant Pandas · Spicy hotpot · Laid-back culture</p>
+        <span class="read-more">TRAVEL GUIDE →</span>
       </div>
     </a>
     <a href="xian.html" class="city-card">
@@ -185,84 +217,84 @@
       <div class="city-overlay"></div>
       <div class="city-info">
         <h3>Xi'an</h3>
-        <p>Terracotta Army · Ancient walls · Muslim Quarter</p>
+        <p>Terracotta Army · Ancient city walls</p>
+        <span class="read-more">TRAVEL GUIDE →</span>
       </div>
     </a>
   </div>
 
-  <!-- MORE CITIES -->
-  <div style="margin-top:32px">
-    <div style="font-size:13px;color:#999;margin-bottom:16px;font-weight:600;letter-spacing:0.08em">MORE DESTINATIONS</div>
-    <div class="more-cities">
-      <a href="guilin.html" class="more-city">
-        <h4>Guilin</h4>
-        <p>Karst mountains · Li River</p>
-      </a>
-      <a href="hangzhou.html" class="more-city">
-        <h4>Hangzhou</h4>
-        <p>West Lake · Tea culture</p>
-      </a>
-      <a href="chongqing.html" class="more-city">
-        <h4>Chongqing</h4>
-        <p>Hot pot · Yangtze River</p>
-      </a>
-      <a href="lhasa.html" class="more-city">
-        <h4>Lhasa</h4>
-        <p>Tibet · Potala Palace</p>
-      </a>
-      <a href="suzhou.html" class="more-city">
-        <h4>Suzhou</h4>
-        <p>Classical gardens · Canals</p>
-      </a>
-      <a href="zhangjiajie.html" class="more-city">
-        <h4>Zhangjiajie</h4>
-        <p>Avatar mountains · Glass bridge</p>
-      </a>
-      <a href="harbin.html" class="more-city">
-        <h4>Harbin</h4>
-        <p>Ice Festival · Russian architecture</p>
-      </a>
-      <a href="xiamen.html" class="more-city">
-        <h4>Xiamen</h4>
-        <p>Gulangyu Island · Seafood</p>
-      </a>
-    </div>
+  <div class="more-grid">
+    <a href="chengdu.html" class="more-card">
+      <h4>Chengdu</h4>
+      <p>Giant Pandas · Spicy hotpot · Relaxed pace</p>
+    </a>
+    <a href="guilin.html" class="more-card">
+      <h4>Guilin</h4>
+      <p>Karst mountains · Li River cruise</p>
+    </a>
+    <a href="chongqing.html" class="more-card">
+      <h4>Chongqing</h4>
+      <p>Hot pot capital · Yangtze River</p>
+    </a>
+    <a href="hangzhou.html" class="more-card">
+      <h4>Hangzhou</h4>
+      <p>West Lake · Longjing tea</p>
+    </a>
+    <a href="zhangjiajie.html" class="more-card">
+      <h4>Zhangjiajie</h4>
+      <p>Avatar mountains · Glass bridge</p>
+    </a>
+    <a href="lhasa.html" class="more-card">
+      <h4>Lhasa</h4>
+      <p>Potala Palace · Tibet plateau</p>
+    </a>
+    <a href="suzhou.html" class="more-card">
+      <h4>Suzhou</h4>
+      <p>Classical gardens · Canal town</p>
+    </a>
+    <a href="harbin.html" class="more-card">
+      <h4>Harbin</h4>
+      <p>Ice Festival · Russian heritage</p>
+    </a>
   </div>
 </div>
 
-<!-- AD SLOT -->
-<div style="margin:0 60px 60px;background:#f7f7f7;border:2px dashed #ddd;text-align:center;padding:36px;border-radius:4px;color:#bbb;font-size:13px">Advertisement</div>
+<!-- AD -->
+<div class="ad-home">ADVERTISEMENT</div>
 
 <!-- TRANSPORT -->
 <div class="sec" id="transport">
-  <div class="sec-label">GETTING AROUND</div>
-  <div class="sec-title">Transport Guides</div>
-  <div class="transport-grid">
+  <div class="sec-eyebrow">GETTING AROUND</div>
+  <div class="sec-heading">Transport Guides</div>
+  <div class="t-grid">
     <div class="t-card">
+      <div class="t-icon">🚄</div>
       <h3>Beijing to Shanghai</h3>
-      <p>The most traveled high speed rail route in China. 4.5 hours, spectacular scenery, no airport hassle.</p>
+      <p>China's most traveled high speed route. 4.5 hours, no airport queues, scenery that changes completely.</p>
       <a href="beijing-to-shanghai.html">Read guide →</a>
     </div>
     <div class="t-card">
+      <div class="t-icon">✈️</div>
       <h3>Airport to City Center</h3>
-      <p>Metro, express train or taxi — the fastest and cheapest ways into the city from major airports.</p>
+      <p>Metro, express train or taxi — fastest and cheapest options from major Chinese airports.</p>
       <a href="airport-to-city.html">Read guide →</a>
     </div>
     <div class="t-card">
+      <div class="t-icon">🗺️</div>
       <h3>Getting Around Beijing</h3>
-      <p>Subway, bus, taxi and DiDi — how to navigate China's capital without getting lost.</p>
+      <p>Subway, bus, taxi and DiDi — how to navigate the capital without getting completely lost.</p>
       <a href="getting-around-beijing.html">Read guide →</a>
     </div>
   </div>
 </div>
 
-<div style="margin:0 60px 80px;background:#f7f7f7;border:2px dashed #ddd;text-align:center;padding:36px;border-radius:4px;color:#bbb;font-size:13px">Advertisement</div>
+<div class="ad-home">ADVERTISEMENT</div>
 
 <footer class="site-footer">
   <div class="f-logo">China Travel Guide</div>
-  <div class="f-links">
-    <a href="privacy.html">Privacy Policy</a>
+  <div class="f-right">
     <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
     <a href="sitemap.xml">Sitemap</a>
   </div>
 </footer>
