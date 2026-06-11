@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All China Travel Guides - Complete Directory | China Travel Guide</title>
+<meta name="description" content="Browse all China travel guides: city guides, practical tips (SIM card, payments, visa), transport guides. Real-time search and filter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yourdomain.com/all-pages.html">
+
+<!-- 引用全局样式（统一导航、页脚、字体、颜色） -->
+<link rel="stylesheet" href="style.css">
+
+<!-- 页面专属样式：搜索框、卡片网格、标签过滤 -->
+<style>
+  .search-wrap {
+    background: #f9f7f4;
+    padding: 48px 80px 40px;
+  }
+  .search-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .search-sub {
+    font-size: 15px;
+    color: #888;
+    margin-bottom: 28px;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    max-width: 560px;
+    margin-bottom: 16px;
+  }
+  .search-box input {
+    flex: 1;
+    border: 1.5px solid #ddd;
+    border-right: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    outline: none;
+    border-radius: 2px 0 0 2px;
+    font-family: 'Inter', sans-serif;
+  }
+  .search-box input:focus {
+    border-color: #c0392b;
+  }
+  .search-box button {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+    transition: background 0.2s;
+  }
+  .search-box button:hover {
+    background: #a93226;
+  }
+  .filter-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.15s;
+    color: #666;
+    user-select: none;
+  }
+  .tag:hover,
+  .tag.active {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+  }
+  .clear-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #888;
+    margin-left: 12px;
+  }
+  .clear-btn:hover {
+    background: #eee;
+    border-color: #999;
+    color: #333;
+  }
+  .pages-wrap {
+    padding: 48px 80px 80px;
+    min-height: 60vh;
+  }
+  .category {
+    margin-bottom: 52px;
+  }
+  .cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e4de;
+  }
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .page-card {
+    border: 1px solid #e8e4de;
+    border-radius: 2px;
+    padding: 20px 22px;
+    transition: all 0.15s;
+    background: #fff;
+    cursor: pointer;
+  }
+  .page-card:active {
+    transform: scale(0.99);
+    background: #f5f5f5;
+  }
+  .page-card:hover {
+    border-color: #c0392b;
+    background: #fdf9f6;
+  }
+  .page-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+  }
+  .page-card p {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+    min-height: 36px;
+  }
+  .tag-small {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.04em;
+  }
+  .tag-city { background: #e8f4fd; color: #1a6fa8; }
+  .tag-essential { background: #fdecea; color: #c0392b; }
+  .tag-transport { background: #eaf6ee; color: #1a7a3c; }
+
+  .no-results {
+    text-align: center;
+    padding: 80px 20px;
+    color: #aaa;
+    font-size: 16px;
+    display: none;
+  }
+  .no-results strong {
+    color: #c0392b;
+  }
+  .no-results .reset-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #c0392b;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .search-wrap { padding: 40px 24px 32px; }
+    .pages-wrap { padding: 40px 24px 60px; }
+    .pages-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .search-title { font-size: 26px; }
+    .pages-grid { grid-template-columns: 1fr; }
+    .tag, .clear-btn { padding: 6px 12px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 导航栏（样式由 style.css 统一控制） -->
+<nav>
+  <a href="/" class="nav-logo">China Travel Guide</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="#cities">Cities</a>
+    <a href="#essentials">Essentials</a>
+    <a href="all-pages.html" style="color:#c0392b;">All Guides</a>
+  </div>
+</nav>
+
+<div class="search-wrap">
+  <div class="search-title">All China Travel Guides</div>
+  <div class="search-sub">Search across all our guides — cities, practical tips, transport and food.</div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search guides... e.g. Beijing, visa, train" oninput="filterPages()">
+    <button onclick="filterPages()">SEARCH</button>
+  </div>
+  <div class="filter-tags">
+    <span class="tag active" data-tag="all" role="button" tabindex="0" aria-pressed="true" onclick="filterByTag('all', this)">All</span>
+    <span class="tag" data-tag="city" role="button" tabindex="0" aria-pressed="false" onclick="filterByTag('city', this)">Cities</span>
+    <span class="tag" data-tag="essential" role="button" tabindex="0" aria-pressed="false" onclick="filterByTag('essential', this)">Essentials</span>
+    <span class="tag" data-tag="transport" role="button" tabindex="0" aria-pressed="false" onclick="filterByTag('transport', this)">Transport</span>
+    <span class="tag clear-btn" role="button" tabindex="0" onclick="clearAllFilters()">Clear all filters</span>
+  </div>
+</div>
+
+<div class="pages-wrap">
+  <div class="no-results" id="noResults">
+    🔍 <strong>No guides found.</strong> Try a different search term or tag.<br>
+    <span class="reset-link" onclick="clearAllFilters()">Clear all filters and try again →</span>
+  </div>
+
+  <!-- Category: Cities -->
+  <div class="category" data-cat="city">
+    <div class="cat-title">City Guides</div>
+    <div class="pages-grid">
+      <a href="beijing.html" class="page-card" data-tags="city beijing forbidden city great wall hutong">
+        <h4>Beijing Travel Guide</h4>
+        <p>Forbidden City, Great Wall, Temple of Heaven, hutongs and food</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="shanghai.html" class="page-card" data-tags="city shanghai bund lujiazui french concession food nightlife">
+        <h4>Shanghai Travel Guide</h4>
+        <p>The Bund, Lujiazui, French Concession and the best food scene in China</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="hangzhou.html" class="page-card" data-tags="city hangzhou west lake longjing tea lingyin temple xixi wetlands">
+        <h4>Hangzhou Travel Guide</h4>
+        <p>West Lake, Longjing tea villages, Lingyin Temple and Xixi Wetlands</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="guilin.html" class="page-card" data-tags="city guilin li river karst mountains yangshuo yulong river bamboo">
+        <h4>Guilin Travel Guide</h4>
+        <p>Li River cruise, karst peaks, Yangshuo and Yulong River rafting</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="zhangjiajie.html" class="page-card" data-tags="city zhangjiajie avatar mountains tianmen glass bridge wulingyuan">
+        <h4>Zhangjiajie Travel Guide</h4>
+        <p>Avatar peaks, Tianmen Mountain, glass bridge and Wulingyuan</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="lhasa.html" class="page-card" data-tags="city lhasa tibet potala palace jokhang temple yamdrok lake permit altitude">
+        <h4>Lhasa Tibet Travel Guide</h4>
+        <p>Potala Palace, Tibet permits, altitude sickness and what to expect</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="chengdu.html" class="page-card" data-tags="city chengdu panda hotpot sichuan food sanxingdui wuhou">
+        <h4>Chengdu Travel Guide</h4>
+        <p>Giant pandas, Sichuan hotpot, Sanxingdui Museum and practical tips</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+      <a href="xian.html" class="page-card" data-tags="city xian terracotta army city wall muslim quarter biangbiang noodles">
+        <h4>Xi'an Travel Guide</h4>
+        <p>Terracotta Army, Ming Dynasty city wall, Muslim Quarter food</p>
+        <span class="tag-small tag-city">CITY</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Category: Essentials -->
+  <div class="category" data-cat="essential">
+    <div class="cat-title">Essential Guides</div>
+    <div class="pages-grid">
+      <a href="sim-card-china.html" class="page-card" data-tags="essential sim card china unicom mobile telecom phone data">
+        <h4>SIM Card in China</h4>
+        <p>Which carrier to pick, where to buy, what documents you need</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="wechat-pay-foreigners.html" class="page-card" data-tags="essential wechat pay payment mobile alipay foreign card bank">
+        <h4>WeChat Pay for Foreigners</h4>
+        <p>Setting up mobile payments with a foreign bank card</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="china-vpn.html" class="page-card" data-tags="essential vpn internet google instagram whatsapp firewall">
+        <h4>VPN in China</h4>
+        <p>How to access Google, Instagram and WhatsApp while in China</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="china-visa.html" class="page-card" data-tags="essential visa china tourist visa free transit 144 hour entry">
+        <h4>China Visa Guide</h4>
+        <p>Visa-free countries, tourist visa and 144-hour transit exemption</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="about.html" class="page-card" data-tags="essential about contact china travel guide">
+        <h4>About This Site</h4>
+        <p>About China Travel Guide and how to get in touch</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="privacy.html" class="page-card" data-tags="essential privacy policy adsense cookies">
+        <h4>Privacy Policy</h4>
+        <p>How this site handles data and advertising</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+      <a href="cash-atms-china.html" class="page-card" data-tags="essential cash atm money withdrawal">
+        <h4>Cash & ATMs in China</h4>
+        <p>Where to withdraw, which foreign cards work and how much cash you need</p>
+        <span class="tag-small tag-essential">ESSENTIAL</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Category: Transport -->
+  <div class="category" data-cat="transport">
+    <div class="cat-title">Transport Guides</div>
+    <div class="pages-grid">
+      <a href="high-speed-train.html" class="page-card" data-tags="transport train high speed bullet ticket booking station">
+        <h4>High Speed Train Guide</h4>
+        <p>How to book, board and ride China's bullet trains</p>
+        <span class="tag-small tag-transport">TRANSPORT</span>
+      </a>
+      <a href="beijing-to-shanghai.html" class="page-card" data-tags="transport beijing shanghai train route journey time scenery">
+        <h4>Beijing to Shanghai by Train</h4>
+        <p>The most traveled high speed route — 4.5 hours, no airport queues</p>
+        <span class="tag-small tag-transport">TRANSPORT</span>
+      </a>
+      <a href="airport-to-city.html" class="page-card" data-tags="transport airport city metro taxi maglev beijing shanghai">
+        <h4>Airport to City Center</h4>
+        <p>Fastest and cheapest options from major Chinese airports</p>
+        <span class="tag-small tag-transport">TRANSPORT</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- 页脚（样式由 style.css 统一控制） -->
+<footer>
+  <div class="footer-logo">China Travel Guide</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="all-pages.html">All Guides</a>
+  </div>
+</footer>
+
+<script>
+let currentTag = 'all';
+
+function filterPages() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const categories = document.querySelectorAll('.category');
+  let anyVisible = false;
+
+  categories.forEach(cat => {
+    const catType = cat.getAttribute('data-cat');
+    const cards = cat.querySelectorAll('.page-card');
+    let catHasVisible = false;
+
+    cards.forEach(card => {
+      const tags = card.getAttribute('data-tags') || '';
+      const title = card.querySelector('h4').innerText.toLowerCase();
+      const desc = card.querySelector('p').innerText.toLowerCase();
+      const matchSearch = query === '' || tags.includes(query) || title.includes(query) || desc.includes(query);
+      const matchTag = currentTag === 'all' || catType === currentTag;
+
+      if (matchSearch && matchTag) {
+        card.style.display = 'block';
+        catHasVisible = true;
+        anyVisible = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    cat.style.display = catHasVisible ? 'block' : 'none';
+  });
+
+  document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+}
+
+function filterByTag(tag, element) {
+  currentTag = tag;
+  document.querySelectorAll('.tag[data-tag]').forEach(t => {
+    const isActive = t.getAttribute('data-tag') === tag;
+    t.classList.toggle('active', isActive);
+    t.setAttribute('aria-pressed', isActive);
+  });
+  filterPages();
+}
+
+function clearAllFilters() {
+  document.getElementById('searchInput').value = '';
+  const allTag = document.querySelector('.tag[data-tag="all"]');
+  if (allTag) filterByTag('all', allTag);
+  document.getElementById('searchInput').focus();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tag').forEach(tag => {
+    if (!tag.hasAttribute('role')) tag.setAttribute('role', 'button');
+    if (!tag.hasAttribute('tabindex')) tag.setAttribute('tabindex', '0');
+    if (tag.classList.contains('active')) tag.setAttribute('aria-pressed', 'true');
+    else tag.setAttribute('aria-pressed', 'false');
+  });
+  filterPages();
+});
+
+document.querySelectorAll('.tag').forEach(tag => {
+  tag.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); tag.click(); }
+  });
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "All China Travel Guides",
+  "description": "Complete directory of China travel guides for foreign visitors",
+  "numberOfItems": 18,
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Beijing Travel Guide"},
+    {"@type": "ListItem", "position": 2, "name": "Shanghai Travel Guide"},
+    {"@type": "ListItem", "position": 3, "name": "Hangzhou Travel Guide"},
+    {"@type": "ListItem", "position": 4, "name": "Guilin Travel Guide"},
+    {"@type": "ListItem", "position": 5, "name": "Zhangjiajie Travel Guide"},
+    {"@type": "ListItem", "position": 6, "name": "Lhasa Tibet Travel Guide"},
+    {"@type": "ListItem", "position": 7, "name": "Chengdu Travel Guide"},
+    {"@type": "ListItem", "position": 8, "name": "Xi'an Travel Guide"},
+    {"@type": "ListItem", "position": 9, "name": "SIM Card in China"},
+    {"@type": "ListItem", "position": 10, "name": "WeChat Pay for Foreigners"},
+    {"@type": "ListItem", "position": 11, "name": "VPN in China"},
+    {"@type": "ListItem", "position": 12, "name": "China Visa Guide"},
+    {"@type": "ListItem", "position": 13, "name": "About This Site"},
+    {"@type": "ListItem", "position": 14, "name": "Privacy Policy"},
+    {"@type": "ListItem", "position": 15, "name": "Cash & ATMs in China"},
+    {"@type": "ListItem", "position": 16, "name": "High Speed Train Guide"},
+    {"@type": "ListItem", "position": 17, "name": "Beijing to Shanghai by Train"},
+    {"@type": "ListItem", "position": 18, "name": "Airport to City Center"}
+  ]
+}
+</script>
+</body>
+</html>
