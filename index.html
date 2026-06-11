@@ -13,6 +13,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a}
 a{text-decoration:none;color:inherit}
+
 .home-nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:transparent;z-index:100;transition:all 0.3s}
 .home-nav.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid #f0ece6}
 .home-nav .logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff}
@@ -20,6 +21,7 @@ a{text-decoration:none;color:inherit}
 .home-nav .links a{color:rgba(255,255,255,0.85);margin-left:28px;font-size:13px;font-weight:500;letter-spacing:0.04em}
 .home-nav.scrolled .links a{color:#666}
 .home-nav .links a:hover{color:#c0392b}
+
 .hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
 .hero img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.68) 100%)}
@@ -29,9 +31,11 @@ a{text-decoration:none;color:inherit}
 .hero-text p{font-size:17px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:36px;max-width:440px}
 .hero-btn{display:inline-block;background:#c0392b;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.1em;padding:16px 36px;border-radius:2px;transition:background 0.2s}
 .hero-btn:hover{background:#a93226}
+
 .sec{padding:88px 80px 64px}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:0.14em;color:#c0392b;margin-bottom:12px}
 .sec-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#1a1a1a;margin-bottom:52px;line-height:1.2}
+
 .e-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #e8e4de}
 .e-card{padding:36px 30px;border-right:1px solid #e8e4de;border-bottom:1px solid #e8e4de;transition:background 0.15s;cursor:pointer}
 .e-card:hover{background:#fdf9f6}
@@ -41,8 +45,10 @@ a{text-decoration:none;color:inherit}
 .e-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:10px;color:#1a1a1a}
 .e-card p{font-size:14px;color:#888;line-height:1.65;margin-bottom:22px}
 .e-link{font-size:12px;color:#c0392b;font-weight:700;letter-spacing:0.06em}
+
 .ad-wrap{padding:0 80px 80px}
 .ad-slot-home{background:#f9f7f4;border:1.5px dashed #ddd;text-align:center;padding:44px;border-radius:4px;color:#ccc;font-size:11px;letter-spacing:0.12em}
+
 .cities-sec{padding:88px 80px 64px;background:#f9f7f4}
 .cities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:56px}
 .city-card{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:0 12px 24px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;background:#1a1a1a}
@@ -57,24 +63,51 @@ a{text-decoration:none;color:inherit}
 .c-info p span:not(:last-child)::after{content:"·";margin-left:6px;color:rgba(255,255,255,0.6)}
 .c-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.12);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.4);padding:8px 18px;border-radius:40px;transition:all 0.25s}
 .city-card:hover .c-btn{background:#c0392b;border-color:#c0392b;backdrop-filter:blur(0)}
+
 .more-cities{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .more-city{flex:0 0 calc(20% - 9.6px);border:1px solid #e8e4de;border-radius:2px;padding:18px 20px;background:#fff;transition:all 0.2s}
 .more-city:hover{border-color:#c0392b;background:#fdf9f6}
 .more-city h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
 .more-city p{font-size:11px;color:#aaa;margin:0}
+
 .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .t-card{border:1px solid #e8e4de;padding:28px;border-radius:2px;transition:all 0.2s}
 .t-card:hover{border-color:#c0392b;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
 .t-card h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1a1a1a;margin-bottom:10px}
 .t-card p{font-size:13px;color:#888;line-height:1.65;margin-bottom:18px}
 .t-card a{font-size:12px;color:#c0392b;font-weight:700;letter-spacing:0.05em}
+
 footer{background:#111;padding:52px 80px;display:flex;justify-content:space-between;align-items:center}
 .f-logo{font-family:'Playfair Display',serif;color:#fff;font-size:18px;font-weight:700}
 .f-links a{color:#555;font-size:13px;margin-left:24px;transition:color 0.2s}
 .f-links a:hover{color:#999}
+
 @media(max-width:1000px){.cities-grid{gap:24px}.c-info h3{font-size:24px}.c-info p{font-size:12px}}
-@media(max-width:900px){.home-nav{padding:16px 24px}.sec{padding:60px 24px 48px}.cities-sec{padding:60px 24px 48px}.ad-wrap{padding:0 24px 60px}.e-grid{grid-template-columns:1fr 1fr}.e-card:nth-child(3n){border-right:1px solid #e8e4de}.e-card:nth-child(2n){border-right:none}.cities-grid{grid-template-columns:repeat(2,1fr);gap:20px}.more-city{flex:0 0 calc(33.333% - 8px)}.t-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:20px;text-align:center;padding:40px 24px}}
-@media(max-width:600px){.home-nav .links{display:none}.hero-text{left:24px;bottom:60px}.hero-text h1{font-size:36px}.hero-text p{display:none}.e-grid{grid-template-columns:1fr}.e-card{border-right:none}.cities-grid{grid-template-columns:1fr;gap:24px}.more-city{flex:0 0 calc(50% - 6px)}.sec-title{font-size:26px}.c-info h3{font-size:26px}}
+@media(max-width:900px){
+  .home-nav{padding:16px 24px}
+  .sec{padding:60px 24px 48px}
+  .cities-sec{padding:60px 24px 48px}
+  .ad-wrap{padding:0 24px 60px}
+  .e-grid{grid-template-columns:1fr 1fr}
+  .e-card:nth-child(3n){border-right:1px solid #e8e4de}
+  .e-card:nth-child(2n){border-right:none}
+  .cities-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .more-city{flex:0 0 calc(33.333% - 8px)}
+  .t-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:40px 24px}
+}
+@media(max-width:600px){
+  .home-nav .links{display:none}
+  .hero-text{left:24px;bottom:60px}
+  .hero-text h1{font-size:36px}
+  .hero-text p{display:none}
+  .e-grid{grid-template-columns:1fr}
+  .e-card{border-right:none}
+  .cities-grid{grid-template-columns:1fr;gap:24px}
+  .more-city{flex:0 0 calc(50% - 6px)}
+  .sec-title{font-size:26px}
+  .c-info h3{font-size:26px}
+}
 </style>
 <script>
 window.addEventListener('scroll',function(){
@@ -83,6 +116,7 @@ window.addEventListener('scroll',function(){
 </script>
 </head>
 <body>
+
 <nav class="home-nav">
   <div class="logo">China Travel Guide</div>
   <div class="links">
@@ -92,6 +126,7 @@ window.addEventListener('scroll',function(){
     <a href="all-pages.html">All Guides</a>
   </div>
 </nav>
+
 <div class="hero">
   <img src="img6.jpg" alt="China travel guide hero image">
   <div class="hero-overlay"></div>
@@ -102,6 +137,7 @@ window.addEventListener('scroll',function(){
     <a href="#essentials" class="hero-btn">EXPLORE GUIDES →</a>
   </div>
 </div>
+
 <div class="sec" id="essentials">
   <div class="sec-label">BEFORE YOU ARRIVE</div>
   <div class="sec-title">Essential Guides for Foreign Visitors</div>
@@ -114,7 +150,9 @@ window.addEventListener('scroll',function(){
     <a href="cash-atms-china.html" class="e-card"><div class="e-num">06 — MONEY</div><h3>Cash & ATMs in China</h3><p>Where to withdraw, which foreign cards work and how much cash you need.</p><div class="e-link">READ GUIDE →</div></a>
   </div>
 </div>
+
 <div class="ad-wrap"><div class="ad-slot-home">ADVERTISEMENT</div></div>
+
 <div class="cities-sec" id="cities">
   <div class="sec-label">DESTINATIONS</div>
   <div class="sec-title">Where to Go in China</div>
@@ -126,25 +164,33 @@ window.addEventListener('scroll',function(){
     <a href="hangzhou.html" class="city-card"><img src="hangzhou3.jpg" alt="Hangzhou West Lake"><div class="c-overlay"></div><div class="c-info"><h3>Hangzhou</h3><p><span>West Lake</span><span>Longjing tea</span><span>Lingyin Temple</span><span>Xixi Wetlands</span></p><span class="c-btn">EXPLORE →</span></div></a>
     <a href="lhasa.html" class="city-card"><img src="lasa2.jpg" alt="Lhasa Potala Palace Tibet"><div class="c-overlay"></div><div class="c-info"><h3>Lhasa · Tibet</h3><p><span>Potala Palace</span><span>Jokhang Temple</span><span>Yamdrok Lake</span><span>Altitude & permits</span></p><span class="c-btn">EXPLORE →</span></div></a>
   </div>
-  <div style="margin-top:48px"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:#999;margin-bottom:20px">MORE DESTINATIONS</div><div class="more-cities">
-    <a href="chengdu.html" class="more-city"><h4>Chengdu</h4><p>Pandas · Spicy hotpot</p></a>
-    <a href="xian.html" class="more-city"><h4>Xi'an</h4><p>Terracotta Army · City Wall</p></a>
-    <a href="guilin.html" class="more-city"><h4>Yangshuo</h4><p>Yulong River · Cycling</p></a>
-    <a href="lhasa.html" class="more-city"><h4>Namtso Lake</h4><p>Sacred lake · Tibet</p></a>
-    <a href="jiuzhaigou.html" class="more-city"><h4>Jiuzhaigou</h4><p>Turquoise lakes · Waterfalls</p></a>
-    <a href="zhangjiajie.html" class="more-city"><h4>Wulingyuan</h4><p>Avatar peaks · Hiking</p></a>
-    <a href="beijing.html" class="more-city"><h4>Mutianyu</h4><p>Great Wall · Cable car</p></a>
-    <a href="suzhou.html" class="more-city"><h4>Suzhou</h4><p>Classical gardens · Canals</p></a>
-    <a href="guilin.html" class="more-city"><h4>Longji Terraces</h4><p>Rice terraces · Minority villages</p></a>
-    <a href="huashan.html" class="more-city"><h4>Huashan</h4><p>Sacred mountain · Plank walk</p></a>
-    <a href="changsha.html" class="more-city"><h4>Changsha</h4><p>Orange Isle · Spicy crayfish</p></a>
-    <a href="chongqing.html" class="more-city"><h4>Chongqing</h4><p>Mountain city · Hotpot · Hongyadong</p></a>
-    <a href="nanjing.html" class="more-city"><h4>Nanjing</h4><p>Ming Xiaoling · Confucius Temple</p></a>
-    <a href="shenzhen.html" class="more-city"><h4>Shenzhen</h4><p>Window of the World · Tech hub</p></a>
-    <a href="wuhan.html" class="more-city"><h4>Wuhan</h4><p>Yellow Crane Tower · Yangtze River</p></a>
-  </div></div>
+
+  <div style="margin-top:48px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:#999;margin-bottom:20px">MORE DESTINATIONS</div>
+    <div class="more-cities">
+      <a href="chengdu.html" class="more-city"><h4>Chengdu</h4><p>Giant Pandas · Sichuan Hotpot</p></a>
+      <a href="xian.html" class="more-city"><h4>Xi'an</h4><p>Terracotta Army · Ancient City Wall</p></a>
+      <a href="guilin.html" class="more-city"><h4>Yangshuo</h4><p>Yulong River · Cycling · Karst Peaks</p></a>
+      <a href="lhasa.html" class="more-city"><h4>Namtso Lake</h4><p>Sacred Lake · Tibetan Plateau</p></a>
+      <a href="jiuzhaigou.html" class="more-city"><h4>Jiuzhaigou</h4><p>Turquoise Lakes · Waterfalls · National Park</p></a>
+      <a href="zhangjiajie.html" class="more-city"><h4>Wulingyuan</h4><p>Avatar Peaks · Hiking · Glass Bridge</p></a>
+      <a href="beijing.html" class="more-city"><h4>Mutianyu</h4><p>Great Wall · Cable Car · Scenic Hike</p></a>
+      <a href="suzhou.html" class="more-city"><h4>Suzhou</h4><p>Classical Gardens · Canals · Silk Museum</p></a>
+      <a href="guilin.html" class="more-city"><h4>Longji Terraces</h4><p>Rice Terraces · Minority Villages</p></a>
+      <a href="huashan.html" class="more-city"><h4>Huashan Mountain</h4><p>Plank Walk · Sacred Peak · Taoist Temples</p></a>
+      
+      <!-- 新增热门城市（统一英文） -->
+      <a href="changsha.html" class="more-city"><h4>Changsha</h4><p>Orange Isle · Spicy Crayfish · Mawangdui</p></a>
+      <a href="chongqing.html" class="more-city"><h4>Chongqing</h4><p>Mountain City · Hongyadong · Spicy Hotpot</p></a>
+      <a href="nanjing.html" class="more-city"><h4>Nanjing</h4><p>Ming Xiaoling · Confucius Temple · Qinhuai River</p></a>
+      <a href="shenzhen.html" class="more-city"><h4>Shenzhen</h4><p>Window of the World · Tech Hub · OCT Loft</p></a>
+      <a href="wuhan.html" class="more-city"><h4>Wuhan</h4><p>Yellow Crane Tower · Yangtze River · East Lake</p></a>
+    </div>
+  </div>
 </div>
+
 <div class="ad-wrap" style="padding-top:80px"><div class="ad-slot-home">ADVERTISEMENT</div></div>
+
 <div class="sec" id="transport">
   <div class="sec-label">GETTING AROUND</div>
   <div class="sec-title">Transport Guides</div>
@@ -154,7 +200,18 @@ window.addEventListener('scroll',function(){
     <div class="t-card"><h3>All Travel Guides</h3><p>Browse all our guides by city, topic or travel type. Search for exactly what you need.</p><a href="all-pages.html">BROWSE ALL →</a></div>
   </div>
 </div>
+
 <div class="ad-wrap"><div class="ad-slot-home">ADVERTISEMENT</div></div>
-<footer><div class="f-logo">China Travel Guide</div><div class="f-links"><a href="all-pages.html">All Guides</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="sitemap.xml">Sitemap</a></div></footer>
+
+<footer>
+  <div class="f-logo">China Travel Guide</div>
+  <div class="f-links">
+    <a href="all-pages.html">All Guides</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
 </body>
 </html>
